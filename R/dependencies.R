@@ -25,7 +25,10 @@ spark_dependencies <- function(spark_version, scala_version, ...) {
           sprintf("java/sparknlp-%s-%s.jar", spark_version, scala_version),
           package = "sparknlp"
         ),
-        jsl_url
+        system.file(
+          sprintf("java/sparknlp.jar"),
+          package = "sparknlp"
+        ),
       ),
       packages = c(
         sprintf("com.johnsnowlabs.nlp:spark-nlp_2.11:%s", spark_nlp_version)
